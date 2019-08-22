@@ -1,4 +1,4 @@
-import { Heap, permute, UnionFind, Tokenizer } from "./lib"
+import { Heap, permute, Kmp, UnionFind, Tokenizer } from "./lib"
 
 function testHeap() {
   const h = new Heap((a, b) => a < b);
@@ -58,7 +58,13 @@ function testTokenizer() {
   console.log(tz.tokens());
 }
 
+function testKmp() {
+  console.log(Kmp("asdkjhfkjh", "jhfd"));
+  console.log(Kmp("asdkjhfkjh", "fkjh"));
+}
+
 // testPermutation()
 // testHeap()
 // testUnionFind()
 // testTokenizer()
+// testKmp()
