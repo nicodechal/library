@@ -30,32 +30,8 @@ function testUnionFind() {
 }
 
 function testTokenizer() {
-  const tz = new Tokenizer([{
-    cb () {
-      const tk = this.nextToken();
-      const matched = tk === '{' || tk === '}' || tk === ',';
-      if (!matched) return false;
-      this.index++;
-      this.result.push(tk);
-      return true;
-    }
-  }, {
-    cb () {
-      let res = "";
-      while (!this.end()) {
-        const tk = this.nextToken().charCodeAt(0);
-        if (tk >= 'a'.charCodeAt(0) && tk <= 'z'.charCodeAt(0)) {
-          res += this.nextToken();
-          this.index++;
-        } else break;
-      }
-      if (res === "") return false;
-      this.result.push(res);
-      return true;
-    }
-  }], "{{a,z},a{b,c},{ab,z}}")
-
-  console.log(tz.tokens());
+  const tz = new Tokenizer(['{', '}', ',', /[a-z]+/], "{{a,z},a{b,c},{ab,z}}");
+  console.log(tz.genTokens().join(" "))
 }
 
 function testKmp() {

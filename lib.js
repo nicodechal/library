@@ -1,8 +1,9 @@
-import Heap from "./lib/algo/heap";
 import Permute from "./lib/algo/permute";
 import Kmp from "./lib/algo/kmp";
-import UnionFind from "./lib/union-find";
-import Tokenizer from "./lib/tokenizer";
+import Tokenizer from "./lib/algo/tokenizer";
+import UnionFind from "./lib/data-structure/union-find";
+import Heap from "./lib/data-structure/heap";
+
 
 export {
   Heap,
