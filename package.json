@@ -1,5 +1,9 @@
 {
+  "scripts": {
+    "test": "babel-node test.js"
+  },
   "dependencies": {
+    "@types/node": "^12.7.12",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0"
   }
