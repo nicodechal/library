@@ -1,4 +1,4 @@
-import { Heap, permute, Kmp, UnionFind, Tokenizer } from "./lib"
+import { Heap, permute, Kmp, UnionFind, Tokenizer, SegmentTree } from "./lib"
 
 function testHeap() {
   const h = new Heap((a, b) => a < b);
@@ -39,8 +39,20 @@ function testKmp() {
   console.log(Kmp("asdkjhfkjh", "fkjh"));
 }
 
+function testSegmentTree() {
+  const st = new SegmentTree([1,5,3,2,4]);
+  console.log(st);
+  console.log(st.query(2, 3));
+  console.log(st.update(1, 3));
+  console.log(st);
+  console.log(st.updateRange(0, 5, 2));
+  console.log(st);
+  console.log(st.query(3, 5));
+  console.log(st);
+}
 // testPermutation()
 // testHeap()
 // testUnionFind()
 // testTokenizer()
-// testKmp()
+testKmp()
+// testSegmentTree()
