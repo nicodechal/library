@@ -1,4 +1,4 @@
-import { Heap, permute, Kmp, UnionFind, Tokenizer, SegmentTree } from "./lib"
+import { Heap, permute, Kmp, UnionFind, Tokenizer, SegmentTree, FenwickTree, Tire } from "./lib"
 
 function testHeap() {
   const h = new Heap((a, b) => a < b);
@@ -50,9 +50,35 @@ function testSegmentTree() {
   console.log(st.query(3, 5));
   console.log(st);
 }
+
+function testFenwickTree() {
+  const f = new FenwickTree(10);
+  f.update(1, 10);
+  f.update(2, 10);
+  f.update(3, 10);
+  f.update(3, 10);
+  f.update(6, 10);
+  f.update(0, 10);
+  console.log(f.sum(5));
+}
+
+function testTire() {
+  const t = new Tire();
+  t.add('ab');
+  t.add('abcd');
+  t.add('abde');
+  t.add('abce');
+  t.add('bcd');
+  console.log(t.root.get('a').get('b'));
+  console.log(t, t.has('abcd'));
+  console.log(t.get('abc'))
+}
+
 // testPermutation()
 // testHeap()
 // testUnionFind()
 // testTokenizer()
-testKmp()
+// testKmp()
 // testSegmentTree()
+// testFenwickTree();
+testTire();
