@@ -69,9 +69,9 @@ function testTire() {
   t.add('abde');
   t.add('abce');
   t.add('bcd');
-  console.log(t.root.get('a').get('b'));
-  console.log(t, t.has('abcd'));
-  console.log(t.get('abc'))
+  console.log(t.get('a').get('b'));
+  console.log(t, t.hasWord('abcd'));
+  console.log(t.getWords('abcs'))
 }
 
 // testPermutation()
